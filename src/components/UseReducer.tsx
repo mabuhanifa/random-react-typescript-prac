@@ -1,9 +1,9 @@
 import { useCallback, useReducer, useRef } from "react";
 
 interface Todo {
-    id: number;
-    done: boolean;
-    text: string;
+    id: number,
+    done: boolean,
+    text: string,
 }
 
 type ActionType =
