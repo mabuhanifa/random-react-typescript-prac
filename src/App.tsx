@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import './App.css';
+interface User {
+  name: string;
+  email: string;
+  age: number;
+}
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState<User>({ name: "", email: "", age: 0 });
 
 
   return (
     <div>
-      {count}
-      <button onClick={() => setCount((p) => p + 1)}>+</button>
+      {user.age}
+      <button onClick={() => setUser({ ...user, age: user.age + 1 })}>+</button>
+      <button onClick={() => setUser({ ...user, age: user.age - 1 })}>-</button>
     </div>
   )
 }
