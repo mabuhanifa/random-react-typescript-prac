@@ -30,8 +30,7 @@ const reducer = (state: StateType[], action: Action) => {
 }
 export default function NewReducer() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const [text, setText] = useState("")
-    console.log(state);
+    const [text, setText] = useState("");
     return (
         <div>
             <div>
@@ -41,16 +40,15 @@ export default function NewReducer() {
                     todo: text
                 })}>Add todo</button>
             </div>
-
-
             {
-                state.map((s) => <div>
-                    {s.todo}
-                    <button onClick={() => dispatch({
-                        type: 'REMOVE_TODO',
-                        id: s.id
-                    })}>Delete</button>
-                </div>
+                state.map((s) =>
+                    <div key={s.id}>
+                        {s.todo}
+                        <button onClick={() => dispatch({
+                            type: 'REMOVE_TODO',
+                            id: s.id
+                        })}>Delete</button>
+                    </div>
                 )
             }</div>
     )
