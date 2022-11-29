@@ -1,15 +1,16 @@
 import './App.css';
 import NewReducer from './components/NewReducer';
 import UseReducer from './components/UseReducer';
+import Context from './context/Context';
 
 
 
 function App() {
   return (
-    <div>
+    <Context>
       <UseReducer />
       <NewReducer />
-    </div>)
+    </Context>)
 }
 
 export default App

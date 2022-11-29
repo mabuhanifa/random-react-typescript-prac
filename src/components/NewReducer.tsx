@@ -3,6 +3,7 @@ import { useTodo } from '../context/Context';
 
 export default function NewReducer() {
     const { state, dispatch } = useTodo();
+    console.log(state, dispatch);
     const [text, setText] = useState("");
     return (
         <div>
