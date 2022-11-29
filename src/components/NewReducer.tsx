@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useTodo } from '../context/Context';
 
 export default function NewReducer() {
-
+    const { state, dispatch } = useTodo();
     const [text, setText] = useState("");
     return (
         <div>

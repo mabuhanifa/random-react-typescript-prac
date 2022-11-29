@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useContext, useReducer } from "react";
 type ContextChild = {
     children: ReactNode
 }
@@ -9,6 +9,11 @@ type StateType = {
 type Action =
     { type: "ADD_TODO", todo: string } |
     { type: "REMOVE_TODO", id: number };
+
+type MainState = {
+    state: StateType[];
+    dispatch: React.Dispatch<Action>
+}
 
 const initialState: StateType[] = [{
     id: 0,
@@ -31,10 +36,16 @@ const reducer = (state: StateType[], action: Action) => {
             throw new Error();
     }
 }
+const TodoContext = createContext({} as MainState);
 export default function Context({ children }: ContextChild) {
-    const TodoContext = createContext({});
+
     const [state, dispatch] = useReducer(reducer, initialState);
+    const store = { state, dispatch }
     return (
-        <TodoContext.Provider value={{}}>{children}</TodoContext.Provider>
+        <TodoContext.Provider value={store}>{children}</TodoContext.Provider>
     )
+}
+
+export const useTodo = () => {
+    return useContext(TodoContext);
 }
