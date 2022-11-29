@@ -7,9 +7,8 @@ interface User {
 }
 
 function App() {
+  const newUser = { name: "", email: "", age: 0 };
   const [user, setUser] = useState<User>({ name: "", email: "", age: 0 });
-
-
   return (
     <div>
       {user.age}
