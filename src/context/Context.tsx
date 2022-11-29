@@ -1,19 +1,5 @@
-import { createContext, ReactNode, useContext, useReducer } from "react";
-type ContextChild = {
-    children: ReactNode
-}
-type StateType = {
-    id: number;
-    todo: string;
-}
-type Action =
-    { type: "ADD_TODO", todo: string } |
-    { type: "REMOVE_TODO", id: number };
-
-type MainState = {
-    state: StateType[];
-    dispatch: React.Dispatch<Action>
-}
+import { createContext, useContext, useReducer } from "react";
+import { Action, ContextChild, MainState, StateType } from "../types/types";
 
 const initialState: StateType[] = [{
     id: 0,
