@@ -46,6 +46,10 @@ export default function NewReducer() {
             {
                 state.map((s) => <div>
                     {s.todo}
+                    <button onClick={() => dispatch({
+                        type: 'REMOVE_TODO',
+                        id: s.id
+                    })}>Delete</button>
                 </div>
                 )
             }</div>
