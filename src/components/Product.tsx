@@ -19,12 +19,12 @@ const Product = ({ id, price, brand, category, description,
             </div>
             {
                 cart.some((c) => c.id === id) ?
-                    <button onClick={() => dispatch({
+                    <button className='btn_remove' onClick={() => dispatch({
                         type: 'REMOVE_FROM_CART',
                         payload: id
                     })}>Remove From Cart</button>
                     :
-                    <button onClick={() => dispatch({
+                    <button className='btn_add' onClick={() => dispatch({
 
                         type: 'ADD_TO_CART',
                         payload: cartProduct
