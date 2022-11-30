@@ -26,7 +26,7 @@ type StateType = {
 
 type Action =
     { type: "ADD_DATA", payload: ProductType[] } |
-    { type: "ADD_TO_CART", payload: ProductType[] } |
+    { type: "ADD_TO_CART", payload: ProductType } |
     { type: "REMOVE_FROM_CART", payload: number };
 
 type MainState = {
@@ -47,7 +47,11 @@ const reducer = (state: StateType, action: Action) => {
                 ...state,
                 products: action.payload
             }
-
+        case "ADD_TO_CART":
+            return {
+                ...state,
+                cart: [...state.cart, action.payload]
+            }
 
         case "REMOVE_FROM_CART":
             return {

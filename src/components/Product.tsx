@@ -1,8 +1,13 @@
-import { ProductType } from '../context/ShopContext';
+import { ProductType, useShop } from '../context/ShopContext';
 
 const Product = ({ id, price, brand, category, description,
     discountPercentage, images, quantity,
     rating, stock, thumbnail, title }: ProductType) => {
+    const { state: { products, cart }, dispatch } = useShop();
+    let cartProduct: ProductType = {
+        id, price,
+        quantity: 1
+    }
     return (
         <div className='single_product'>
             <div>
@@ -12,6 +17,10 @@ const Product = ({ id, price, brand, category, description,
                 <img src={images?.[0]} alt="" className='img' />
 
             </div>
+            <button onClick={() => dispatch({
+                type: 'ADD_TO_CART',
+                payload: cartProduct
+            })}>Add To Cart</button>
         </div>
     );
 };
