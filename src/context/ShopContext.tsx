@@ -27,7 +27,8 @@ type StateType = {
 type Action =
     { type: "ADD_DATA", payload: ProductType[] } |
     { type: "ADD_TO_CART", payload: ProductType } |
-    { type: "REMOVE_FROM_CART", payload: number };
+    { type: "REMOVE_FROM_CART", payload: number } |
+    { type: "CHANGE_CART_QTY", payload: ProductType };
 
 type MainState = {
     state: StateType;
