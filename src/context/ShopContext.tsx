@@ -1,11 +1,26 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
+export type ProductType = {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    discountPercentage: number;
+    rating: number;
+    stock: number;
+    brand: string;
+    category: string;
+    thumbnail: string;
+    images: string[];
+}
+
+
 export type ContextChild = {
     children: ReactNode
 }
 export type StateType = {
-    id: number;
-    todo: string;
+    product: number[];
+    cart: [];
 }
 export type Action =
     { type: "ADD_DATA", todo: string } |
@@ -16,9 +31,11 @@ export type MainState = {
     state: StateType[];
     dispatch: React.Dispatch<Action>
 }
+
+
 const initialState: StateType[] = [{
-    id: 0,
-    todo: "first"
+    product: [],
+    cart: []
 }]
 
 const reducer = (state: StateType[], action: Action) => {
