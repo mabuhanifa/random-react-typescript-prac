@@ -1,16 +1,16 @@
 import './App.css';
 import NewReducer from './components/NewReducer';
 import UseReducer from './components/UseReducer';
-import Context from './context/Context';
+import ShopContext from './context/ShopContext';
 
 
 
 function App() {
   return (
-    <Context>
+    <ShopContext>
       <UseReducer />
       <NewReducer />
-    </Context>)
+    </ShopContext>)
 }
 
 export default App

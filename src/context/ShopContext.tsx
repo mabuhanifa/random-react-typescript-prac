@@ -58,7 +58,7 @@ const reducer = (state: StateType, action: Action) => {
             throw new Error();
     }
 }
-const ShopContext = createContext({} as MainState);
+export const ShopContext = createContext({} as MainState);
 export default function Context({ children }: ContextChild) {
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -68,6 +68,6 @@ export default function Context({ children }: ContextChild) {
     )
 }
 
-export const useTodo = () => {
+export const useShop = () => {
     return useContext(ShopContext);
 }
