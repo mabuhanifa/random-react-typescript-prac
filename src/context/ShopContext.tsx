@@ -56,7 +56,7 @@ const reducer = (state: StateType, action: Action) => {
         case "REMOVE_FROM_CART":
             return {
                 ...state,
-                cart: state.cart.filter(c => c.id === action.payload)
+                cart: state.cart.filter(c => c.id !== action.payload)
             };
         default:
             throw new Error();
