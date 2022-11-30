@@ -8,8 +8,9 @@ export type StateType = {
     todo: string;
 }
 export type Action =
-    { type: "ADD_TODO", todo: string } |
-    { type: "REMOVE_TODO", id: number };
+    { type: "ADD_DATA", todo: string } |
+    { type: "ADD_TO_CART", id: number } |
+    { type: "REMOVE_FROM_CART", id: number };
 
 export type MainState = {
     state: StateType[];
