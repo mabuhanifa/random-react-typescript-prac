@@ -17,14 +17,17 @@ export default function NewReducer() {
     }, [])
 
     return (
-        <div>
+        <div className='main'>
             <h1>Products</h1>
-            {
-                products && products.map((p) =>
-                    <Product {...p} key={p.id} />
-                )
-            }
+            <div className='product'>
 
+                {
+                    products && products.map((p) =>
+                        <Product {...p} key={p.id} />
+                    )
+                }
+
+            </div>
         </div>
     )
 }
