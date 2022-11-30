@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
-export type ProductType = {
+type ProductType = {
     id: number;
     title: string;
     description: string;
@@ -15,42 +15,45 @@ export type ProductType = {
     quantity?: number;
 }
 
-
-export type ContextChild = {
+type ContextChild = {
     children: ReactNode
 }
-export type StateType = {
-    product: ProductType[];
+
+type StateType = {
+    products: ProductType[];
     cart: ProductType[];
 }
-export type Action =
-    { type: "ADD_DATA", todo: string } |
-    { type: "ADD_TO_CART", id: number } |
-    { type: "REMOVE_FROM_CART", id: number };
 
-export type MainState = {
-    state: StateType[];
+type Action =
+    { type: "ADD_DATA", payload: ProductType[] } |
+    { type: "ADD_TO_CART", payload: ProductType[] } |
+    { type: "REMOVE_FROM_CART", payload: number };
+
+type MainState = {
+    state: StateType;
     dispatch: React.Dispatch<Action>
 }
 
 
-const initialState: StateType[] = [{
-    product: [],
+const initialState: StateType = {
+    products: [],
     cart: []
-}]
+}
 
-const reducer = (state: StateType[], action: Action) => {
+const reducer = (state: StateType, action: Action) => {
     switch (action.type) {
         case "ADD_DATA":
-            return [
+            return {
                 ...state,
-                {
-                    id: state.length + 1,
-                    todo: action.todo
-                },
-            ];
+                products: action.payload
+            }
+
+
         case "REMOVE_FROM_CART":
-            return state.filter(({ id }) => id !== action.id);
+            return {
+                ...state,
+                cart: state.cart.filter(c => c.id === action.payload)
+            };
         default:
             throw new Error();
     }
