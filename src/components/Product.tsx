@@ -17,10 +17,19 @@ const Product = ({ id, price, brand, category, description,
                 <img src={images?.[0]} alt="" className='img' />
 
             </div>
-            <button onClick={() => dispatch({
-                type: 'ADD_TO_CART',
-                payload: cartProduct
-            })}>Add To Cart</button>
+            {
+                cart.some((c) => c.id === id) ?
+                    <button onClick={() => dispatch({
+                        type: 'REMOVE_FROM_CART',
+                        payload: id
+                    })}>Remove From Cart</button>
+                    :
+                    <button onClick={() => dispatch({
+
+                        type: 'ADD_TO_CART',
+                        payload: cartProduct
+                    })}>Add To Cart</button>
+            }
         </div>
     );
 };
