@@ -40,20 +40,20 @@ const initialState: StateType[] = [{
 }]
 
 const reducer = (state: StateType[], action: Action) => {
-    // switch (action.type) {
-    //     case "ADD_TODO":
-    //         return [
-    //             ...state,
-    //             {
-    //                 id: state.length + 1,
-    //                 todo: action.todo
-    //             },
-    //         ];
-    //     case "REMOVE_TODO":
-    //         return state.filter(({ id }) => id !== action.id);
-    //     default:
-    //         throw new Error();
-    // }
+    switch (action.type) {
+        case "ADD_DATA":
+            return [
+                ...state,
+                {
+                    id: state.length + 1,
+                    todo: action.todo
+                },
+            ];
+        case "REMOVE_FROM_CART":
+            return state.filter(({ id }) => id !== action.id);
+        default:
+            throw new Error();
+    }
 }
 const ShopContext = createContext({} as MainState);
 export default function Context({ children }: ContextChild) {
