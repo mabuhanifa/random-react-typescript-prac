@@ -2,16 +2,16 @@ import { createContext, ReactNode, useContext, useReducer } from "react";
 
 export type ProductType = {
     id: number;
-    title: string;
-    description: string;
+    title?: string;
+    description?: string;
     price: number;
-    discountPercentage: number;
-    rating: number;
-    stock: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-    images: string[];
+    discountPercentage?: number;
+    rating?: number;
+    stock?: number;
+    brand?: string;
+    category?: string;
+    thumbnail?: string;
+    images?: string[];
     quantity?: number;
 }
 

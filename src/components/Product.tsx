@@ -1,7 +1,8 @@
 import { ProductType } from '../context/ShopContext';
 
-const Product = ({ brand, category, description, discountPercentage,
-    id, images, price, rating, stock, thumbnail, title, quantity }: ProductType) => {
+const Product = ({ id, price, brand, category, description,
+    discountPercentage, images, quantity,
+    rating, stock, thumbnail, title }: ProductType) => {
     return (
         <div>
 
