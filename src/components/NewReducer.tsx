@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import Product from './Product';
 
 export default function NewReducer() {
     const { state: { products, cart }, dispatch } = useShop();
@@ -22,9 +23,7 @@ export default function NewReducer() {
             <h1>Products</h1>
             {
                 products && products.map((p) =>
-                    <div>
-                        {p.id}
-                    </div>
+                    <Product {...p} key={p.id} />
                 )
             }
 
