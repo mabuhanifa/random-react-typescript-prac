@@ -12,6 +12,7 @@ export type ProductType = {
     category: string;
     thumbnail: string;
     images: string[];
+    quantity?: number;
 }
 
 
@@ -19,8 +20,8 @@ export type ContextChild = {
     children: ReactNode
 }
 export type StateType = {
-    product: number[];
-    cart: [];
+    product: ProductType[];
+    cart: ProductType[];
 }
 export type Action =
     { type: "ADD_DATA", todo: string } |
