@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useShop } from '../context/ShopContext';
+import Cart from './Cart';
 import Product from './Product';
 
 export default function NewReducer() {
@@ -20,15 +21,21 @@ export default function NewReducer() {
     return (
         <div className='main'>
             <h1>Products</h1>
-            <div className='product'>
+            <div className='show'>
+                <div className='product'>
 
-                {
-                    products && products.map((p) =>
-                        <Product {...p} key={p.id} />
-                    )
-                }
+                    {
+                        products && products.map((p) =>
+                            <Product {...p} key={p.id} />
+                        )
+                    }
 
+                </div>
+                <div>
+                    <Cart />
+                </div>
             </div>
+
         </div>
     )
 }

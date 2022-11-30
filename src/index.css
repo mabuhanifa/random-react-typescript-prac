@@ -28,6 +28,11 @@
   max-height: 200px;
   object-fit: cover;
 }
+.show {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
 .btn_add,
 .btn_remove {
   appearance: button;

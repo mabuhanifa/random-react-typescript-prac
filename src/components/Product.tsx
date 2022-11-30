@@ -5,7 +5,7 @@ const Product = ({ id, price, brand, category, description,
     rating, stock, thumbnail, title }: ProductType) => {
     const { state: { products, cart }, dispatch } = useShop();
     let cartProduct: ProductType = {
-        id, price,
+        id, price, title, images,
         quantity: 1
     }
     return (
