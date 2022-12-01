@@ -20,8 +20,8 @@ export default function Cart() {
                     <div key={c.id}>
                         {c.title}
                         {c.quantity}
-                        <button onClick={() => changeQuantity(c.id, c.quantity ? c.quantity + 1 : 1)}>+</button>
-                        <button onClick={() => changeQuantity(c.id, c.quantity ? c.quantity - 1 : 1)}>-</button>
+                        <button className="btn__add" onClick={() => changeQuantity(c.id, c.quantity ? c.quantity + 1 : 1)}>+</button>
+                        <button className="btn__remove" onClick={() => changeQuantity(c.id, c.quantity ? c.quantity - 1 : 1)}>-</button>
                     </div>
 
                 )

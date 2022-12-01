@@ -34,7 +34,9 @@
 }
 
 .btn_add,
-.btn_remove {
+.btn_remove,
+.btn__add,
+.btn__remove {
   appearance: button;
   backface-visibility: hidden;
   background-color: #405cf5;
@@ -54,7 +56,6 @@
   outline: none;
   overflow: hidden;
   padding: 0 25px;
-  position: relative;
   text-align: center;
   text-transform: none;
   transform: translateZ(0);
@@ -75,5 +76,15 @@
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
 .btn_remove {
+  background-color: rgb(255, 30, 30) !important;
+}
+.btn__add,
+.btn__remove {
+  width: max-content !important;
+  padding: 5px 10px;
+  margin: 0 20px;
+}
+
+.btn__remove {
   background-color: rgb(255, 30, 30) !important;
 }
