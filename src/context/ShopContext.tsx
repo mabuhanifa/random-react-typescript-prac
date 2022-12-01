@@ -4,7 +4,7 @@ export type ProductType = {
     id: number;
     title?: string;
     description?: string;
-    price: number;
+    price?: number;
     discountPercentage?: number;
     rating?: number;
     stock?: number;
@@ -59,6 +59,13 @@ const reducer = (state: StateType, action: Action) => {
                 ...state,
                 cart: state.cart.filter(c => c.id !== action.payload)
             };
+        case "CHANGE_CART_QTY":
+            console.log(action);
+            return {
+                ...state,
+                cart: state.cart.filter((c) => c.id == action.payload.id ? (c.quantity = action.payload.quantity) : c.quantity)
+            };
+
         default:
             throw new Error();
     }
