@@ -10,7 +10,7 @@
   -webkit-text-size-adjust: 100%;
 }
 .main {
-  margin: 100px;
+  margin: 50px;
 }
 .product {
   display: grid;
@@ -20,7 +20,7 @@
   border: 1px solid rgb(209, 209, 209);
   border-radius: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  padding: 50px;
+  padding: 20px;
   margin: 25px 20px;
 }
 .img {
@@ -84,7 +84,22 @@
   padding: 5px 10px;
   margin: 0 20px;
 }
-
+.btn_div {
+  position: absolute;
+  top: 15px !important;
+  right: 0 !important;
+}
 .btn__remove {
   background-color: rgb(255, 30, 30) !important;
+}
+
+.cart {
+  padding: 15px;
+}
+.cart_body {
+  padding: 15px;
+  margin: 10px;
+  position: relative;
+  border: 1px solid rgb(207, 205, 205);
+  border-radius: 1em;
 }
