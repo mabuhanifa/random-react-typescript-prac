@@ -13,6 +13,7 @@ export default function Cart() {
         console.log(id, quantity)
     }
     const totalPrice = cart.reduce((a, c) => a + ((c.price ? c.price : 0) * (c.quantity ? c.quantity : 0)), 0)
+
     return (
         <>
             <h1>Cart</h1>
@@ -20,11 +21,8 @@ export default function Cart() {
             <h2>Total Price: {totalPrice}</h2>
 
             <div className="cart">
-
-
                 {
                     cart && cart.map((c) =>
-
                         <div key={c.id} className="cart_body">
                             <h4>{c.title}</h4>
                             <p>Quantity: {c.quantity}</p>

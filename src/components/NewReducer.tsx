@@ -8,10 +8,10 @@ export default function NewReducer() {
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch("https://dummyjson.com/products");
-            const _data = await res.json();
+            const data = await res.json();
             dispatch({
                 type: 'ADD_DATA',
-                payload: _data.products
+                payload: data.products
             })
         }
         fetchData();
