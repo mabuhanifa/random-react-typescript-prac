@@ -2,8 +2,7 @@ import { useShop } from "../context/ShopContext";
 
 export default function Cart() {
     const { state: { cart }, dispatch } = useShop();
-    console.log(cart);
-    const changeQuantity = (id: number, quantity?: number) => {
+    const changeQuantity = (id: number, quantity: number = 1) => {
         dispatch({
             type: "CHANGE_CART_QTY",
             payload: {
@@ -11,7 +10,7 @@ export default function Cart() {
                 quantity: quantity
             }
         })
-
+        console.log(id, quantity)
     }
     return (
         <div>
@@ -21,7 +20,8 @@ export default function Cart() {
                     <div key={c.id}>
                         {c.title}
                         {c.quantity}
-                        <button onClick={() => changeQuantity(c.id, c.quantity)}>+</button>
+                        <button onClick={() => changeQuantity(c.id, c.quantity ? c.quantity + 1 : 1)}>+</button>
+                        <button onClick={() => changeQuantity(c.id, c.quantity ? c.quantity - 1 : 1)}>-</button>
                     </div>
 
                 )

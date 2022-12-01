@@ -60,7 +60,6 @@ const reducer = (state: StateType, action: Action) => {
                 cart: state.cart.filter(c => c.id !== action.payload)
             };
         case "CHANGE_CART_QTY":
-            console.log(action);
             return {
                 ...state,
                 cart: state.cart.filter((c) => c.id == action.payload.id ? (c.quantity = action.payload.quantity) : c.quantity)

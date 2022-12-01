@@ -5,7 +5,6 @@ import Product from './Product';
 
 export default function NewReducer() {
     const { state: { products, cart }, dispatch } = useShop();
-    console.log(cart);
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch("https://dummyjson.com/products");
