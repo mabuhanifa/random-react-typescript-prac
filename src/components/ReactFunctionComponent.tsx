@@ -1,9 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const Heading: React.FunctionComponent = () => {
-    return (
-        <div>React.FunctionComponent</div>
-    )
-}
+const Head = ({ children }: { children: ReactNode }) => (
+    <div>{children}</div>
+)
 
-export default Heading;
+
+export default Head;
