@@ -1,6 +1,11 @@
 
 export default function Heading(props: { title: string }) {
+    const { title } = props;
     return (
-        <div>Heading</div>
+        <div>
+            {
+                title
+            }
+        </div>
     )
 }
