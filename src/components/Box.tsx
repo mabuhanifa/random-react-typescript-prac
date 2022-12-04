@@ -1,6 +1,11 @@
+import { ReactNode } from "react";
 
-export default function Box() {
+export default function Box({ children }: { children: ReactNode }) {
     return (
-        <div>Box</div>
+        <div>
+            {
+                children
+            }
+        </div>
     )
 }
