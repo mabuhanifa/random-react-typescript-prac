@@ -1,4 +1,4 @@
-const List: React.FunctionComponent<{ items: string[] }> = ({ items }) => (
+const List: React.FunctionComponent<{ items: string[]; onClick?: (item: string) => void }> = ({ items }) => (
     <ul>
         {
             items.map((item, index) => (
