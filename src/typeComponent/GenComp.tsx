@@ -1,9 +1,16 @@
-import React from "react";
+import { ReactNode } from "react";
 
-const UL: React.FunctionComponent = () => {
-  return <div>
+function UL<T>({ items, render }: { items: T[], render: (item: T) => ReactNode }) {
+  return <ul>
+    {
+      items.map((item, index) => (
+        <li key={index}>
+          {render(item)}
+        </li>
+      ))
+    }
 
-  </div>;
+  </ul>;
 };
 
 export default UL;
