@@ -25,6 +25,7 @@ function App() {
         (todo) => (
           <>
             {todo}
+            <button onClick={() => alert(todo)}>Alert</button>
           </>
         )
       } />
