@@ -2,12 +2,13 @@ import { useCallback } from 'react';
 import './App.css';
 import Box from './components/Box';
 import Heading from './components/Heading';
-import List from './components/List';
 import Head from './components/ReactFunctionComponent';
+import UL from './typeComponent/GenComp';
 
 
 
 function App() {
+  const todos = ["1", "2", "3", "4"];
   const onListClick = useCallback((item: string) => {
     alert(item);
   }, []);
@@ -20,7 +21,13 @@ function App() {
       <Box>
         Hello There
       </Box>
-      <List items={["1", "2", "3", "4"]} onClick={onListClick} />
+      <UL items={todos} render={
+        (todo) => (
+          <>
+            {todo}
+          </>
+        )
+      } />
     </div>
   )
 }

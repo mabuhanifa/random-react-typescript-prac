@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import React from "react";
 
-function UL<T>({ items, render }: { items: T[], render: (item: T) => ReactNode }) {
+function UL<T>({ items, render }: { items: T[], render: (item: T) => React.ReactNode }) {
   return <ul>
     {
       items.map((item, index) => (
