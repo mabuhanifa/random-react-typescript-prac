@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
 type StateType = {
     state: number
 }
@@ -9,4 +9,8 @@ export const NewProvider = ({ children }: { children: React.ReactNode }) => {
         state: 0
     }
     return <NewContext.Provider value={newState}>{children}</NewContext.Provider>
+}
+
+export const useNew = () => {
+    return useContext(NewContext)
 }
